@@ -694,7 +694,7 @@
             ctx.strokeRect(bx, by, bw, bh);
 
             // Draw label background
-            const label = isKnown ? `${f.name} (${f.distance})` : "Unknown Person";
+            const label = isKnown ? `${f.name} (${f.distance})` : `Unknown (${f.distance < 999 ? f.distance : '--'})`;
             ctx.font = "bold 13px Inter, sans-serif";
             const textWidth = ctx.measureText(label).width;
 

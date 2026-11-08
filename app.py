@@ -280,7 +280,7 @@ async def recognize_face(payload: RecognizeRequest):
         student_name = "Unknown Person"
         lbph_distance = 999.0
 
-        if len(recognition_system.label_to_student) >= 2:
+        if len(recognition_system.label_to_student) >= 1:
             try:
                 predicted_label, lbph_dist = recognition_system.model.predict(face_roi)
                 lbph_distance = round(float(lbph_dist), 2)

@@ -23,7 +23,7 @@ MODEL_FILE = PROJECT_ROOT / "models" / "haarcascade_frontalface_default.xml"
 # LBPH distance threshold tuned for a small local dataset with variable webcam lighting and face angle.
 # Lower values are stricter; this value is intentionally higher than the original 60.0 to reduce false
 # unknown results when a real registered face is present but differs slightly from the training samples.
-RECOGNITION_THRESHOLD = 80.0
+RECOGNITION_THRESHOLD = 85.0
 WINDOW_TITLE = "SmartAttend AI - Face Recognition"
 
 
@@ -146,8 +146,8 @@ class FaceRecognitionSystem:
 
                 face_crop = self._extract_face(image)
                 if face_crop is None:
-                    print(f"Warning: no face detected in image: {image_path}")
-                    continue
+                    # If image is already cropped, use directly
+                    face_crop = image
 
                 normalized_face = cv2.resize(face_crop, (200, 200), interpolation=cv2.INTER_LINEAR)
                 training_images.append(normalized_face)
@@ -202,7 +202,7 @@ class FaceRecognitionSystem:
         if frame is None:
             raise ValueError("Cannot recognize from an empty frame.")
 
-        if len(self.label_to_student) <= 1:
+        if len(self.label_to_student) < 1:
             self.status_message = "Unknown Person"
             cv2.putText(
                 frame,
