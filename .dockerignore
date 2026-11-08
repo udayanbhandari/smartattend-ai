@@ -1,0 +1,11 @@
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.git/
+.gitignore
+.env
+tests/
+evaluation_console.txt
+testing_report_console.txt
+

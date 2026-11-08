@@ -1,0 +1,18 @@
+{
+  "students": [
+    {
+      "student_id": "student_039",
+      "name": "Udayan Manoj Bhandari",
+      "registered_at": "2026-11-08 18:27:03",
+      "images": [
+        "registered_faces\\student_039\\face_001.jpg",
+        "registered_faces\\student_039\\face_002.jpg",
+        "registered_faces\\student_039\\face_003.jpg",
+        "registered_faces\\student_039\\face_004.jpg",
+        "registered_faces\\student_039\\face_005.jpg",
+        "registered_faces\\student_039\\face_006.jpg"
+      ],
+      "image_count": 6
+    }
+  ]
+}

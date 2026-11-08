@@ -1,0 +1,1 @@
+"""SmartAttend AI source package."""

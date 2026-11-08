@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: smartattend-ai
+    env: docker
+    plan: free
+    region: oregon
+    dockerfilePath: ./Dockerfile
+    autoDeploy: true
+    healthCheckPath: /api/health
+    disk:
+      name: smartattend-data
+      mountPath: /app/dataset
+      sizeGB: 1
+
